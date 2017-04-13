@@ -198,11 +198,31 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"views/index.html": {
+				"resources": [
+					"js/lib/jquery-1.9.1.min.js",
+					"views/list.html",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"js/lib/AppJs.js",
+					"css/mui.min.css",
+					"js/app/index.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"views/list.html": {
+				"resources": [
+					"js/app/list.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"js/lib/jquery-1.9.1.min.js",
 				"js/mui.js",
 				"css/mui.css"
 			]

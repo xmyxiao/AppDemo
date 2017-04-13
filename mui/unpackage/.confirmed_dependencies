@@ -1,9 +1,29 @@
 {
-  "index.html": {
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css"
-    ]
-  }
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"views/index.html": {
+		"resources": [
+			"js/lib/jquery-1.9.1.min.js",
+			"views/list.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/lib/AppJs.js",
+			"css/mui.min.css",
+			"js/app/index.js"
+		],
+		"refer": [
+			"views/list.html"
+		]
+	},
+	"views/list.html": {
+		"resources": [
+			"js/app/list.js",
+			"css/mui.min.css"
+		]
+	}
 }
