@@ -1,0 +1,11 @@
+{
+  "view/index.html": {
+    "href": "view/index.html",
+    "resources": [
+      "js/lib/jquery-1.9.1.min.js",
+      "js/app/index.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

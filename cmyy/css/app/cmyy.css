@@ -1,0 +1,13 @@
+.cmyy-home-headr{
+	background-color: #2ecfbe;
+}
+.cmyy-home-headr .mui-title{
+	color:#fff;
+}
+.mui-slider .mui-slider-group.cmyy-slider-point{
+	position: absolute;
+}
+.cmyy-slider .mui-slider-title{
+	opacity: 0.6;
+	color: #fff;
+}
