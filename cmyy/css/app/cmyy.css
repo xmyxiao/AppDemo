@@ -4,10 +4,29 @@
 .cmyy-home-headr .mui-title{
 	color:#fff;
 }
+.cmyy-slider{
+	height:170px;
+}
+.cmyy-slider .mui-slider-group,.cmyy-slider .mui-slider-group .mui-slider-item,.cmyy-slider .mui-slider-group .mui-slider-item a,.mui-slider-group .mui-slider-item img{
+	height:100%;
+}
 .mui-slider .mui-slider-group.cmyy-slider-point{
 	position: absolute;
 }
 .cmyy-slider .mui-slider-title{
 	opacity: 0.6;
 	color: #fff;
+}
+.cmyy-icon{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+.cmyy-icon-new{
+	background: url(../../images/icon-9.png);
+}
+.cmyy-icon-line{
+	color: #007aff;
+    line-height: 45px;
+    padding: 0 5px;
 }
