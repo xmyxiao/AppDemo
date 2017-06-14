@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>违章处罚</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link rel="stylesheet" href="../css/mui.picker.min.css" />
+    <link rel="stylesheet" href="../css/mui.poppicker.css" />
+    <link href="../css/app.css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="mui-content">
+		<ul class="mui-table-view app-table-list">
+			<li class="table-view-item app-table ui-textellipsis">
+				<span>处罚通知书：</span>
+				<span class="app-js-fnumber">（2017）罚字第102号</span>
+				<spna id="guid"></span>
+			</li>
+			<li class="table-view-item table-view-right ui-textellipsis">
+				<span>被考核人：</span>
+				<span id="userResult"></span>
+				<i class="icon iconfont icon-wd1 view-right-search" id="showUserPicker" style="color:#007aff"></i>
+			</li>
+			<li class="table-view-item table-view-right ui-textellipsis">
+				<span>主管单位：</span>
+				<span id="depResult">生产技术处</span>
+				<i class="icon iconfont icon-sousuo view-right-search" id="showDepPicker" style="color:#007aff"></i>
+			</li>
+			<li class="table-view-item ui-textellipsis">
+				<span class="mui-pull-left">处罚类型：</span>
+				<div class="table-content-body punish-row">
+					<div class="danger-list mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+				            <div class="mui-table-view-cell">
+				                <spna class="danger-list-item select">罚款</spna>
+				            </div>
+				        </div>
+				        <div class="mui-col-sm-4 mui-col-xs-4">
+				            <div class="mui-table-view-cell">
+				                <spna class="danger-list-item ">扣分</spna>
+				            </div>
+				        </div>
+				        <div class="mui-col-sm-4 mui-col-xs-4">
+				            <div class="mui-table-view-cell">
+				                <spna class="danger-list-item ">罚款并扣分</spna>
+				            </div>
+				        </div>
+					</div>
+				</div>
+			</li>
+			<li class="table-view-item table-view-right ui-textellipsis">
+				<span>违章时间：</span>
+				<span class="app-date-text">2015年5月10日 13：00</span>
+				<i class="icon iconfont icon-rq view-right-search app-date-btn" style="color:#007aff"></i>
+			</li>
+			<li class="table-view-item app-table-content">
+				<span class="table-content-label mui-pull-left">违章行为：</span>
+				<div class="table-content-body">
+					<textarea id="textarea" rows="5" placeholder="" style="height: 74px;margin: 0;"></textarea>
+				</div>
+			</li>
+			<li class="table-view-item ui-textellipsis">
+				<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点：</span>
+				<span class="app-js-site"><input type="text" placeholder="请输入地点" style="width:70%;"></span>
+			</li>
+			<li class="table-view-item ui-textellipsis">
+				<span>罚款金额：</span>
+				<span class="app-js-money"><input type="text" placeholder="金额">&nbsp;元</span>
+			</li>
+			<li class="table-view-item ui-textellipsis">
+				<span>扣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：</span>
+				<span class="app-js-grade"><input type="text" placeholder="分数">&nbsp;分</span>
+			</li>
+			<li class="table-view-item app-table-img" style="height: 165px;position: relative;">
+				<div>
+					<span class="table-img-label" style="line-height: 21px;">现场取证：</span>
+					<span class="mui-icon mui-icon-camera upfile">
+						<iframe name="uploadfrm" id="uploadfrm" style="display: none;"></iframe>  
+					    <form name="formHead" method="post" action="" id="formHead" enctype="multipart/form-data" target="uploadfrm">  
+					        <div>  
+					            <div>  
+					                <input type="file" name="files" id="file_head" onchange="javascript:setImagePreview();" />  
+					            </div>  
+					            <div>  
+					                <div id="DivUp" style="display: none">  
+					                    <input type="submit" data-inline="true" id="BtnUp" value="确认上传" data-mini="true" />  
+					                </div>  
+					            </div>  
+					        </div>  
+					    </form>  
+					</span>
+					<div data-role="fieldcontain" style="position: absolute;top:10px;right:10px;">  
+				        <div id="localImag">  
+				            <img id="preview" width="-1" height="-1" style="display: none" />  
+				        </div>  
+				    </div>
+				</div>
+				<div class="table-img-body" style="height: 115px;">
+					<ul id="tableImg">
+						
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<div class="app-bottom-button clearfix" style="padding:0 10px;margin-top: 20px;">
+			<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left app-btn-return">
+				返回
+			</button>
+			<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right app-btn-submit" onclick="formSubmit();">
+				提交
+			</button>
+		</div>
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/zepto.js" ></script>
+	<script type="text/javascript" src="../js/appEve.js" ></script>
+	<script type="text/javascript" src="../js/mui.picker.min.js" ></script>
+	<script type="text/javascript" src="../js/mui.poppicker.js" ></script>
+	<script type="text/javascript" src="../js/jquery.min.js" ></script>
+  	<script type="text/javascript" src="../js/file.js" ></script>
+  	<script type="text/javascript" src="../js/jquery.form.min.js" ></script>
+	<script type="text/javascript" src="../js/punish-write.js" ></script>
+</body>
+</html>
+
+	 
+          
+  
+   

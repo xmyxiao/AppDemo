@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>隐患治理列表</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="icon iconfont icon-sh app-title-icon mui-pull-left app-title-color"></a>
+		<h1 class="mui-title app-nav-title">隐患治理列表</h1>
+		<a class="iconfont app-title-icon icon-sousuo mui-pull-right app-title-color"></a>
+	</header>
+	<div class="mui-content">
+		<div class="danger-list mui-row app-js-list">
+			<div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item select">整改中</spna>
+	            </div>
+	        </div>
+	        <div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item">整改超期</spna>
+	                <span class="red-circular"><span class="red-circular-num">6</span></span>
+	            </div>
+	        </div>
+	        <div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item ">所有隐患</spna>
+	            </div>
+	        </div>
+		</div>
+		<div class="danger-list">
+			<div class="mui-input-row app-search-row">
+				<i class="iconfont icon-sousuo app-search-icon"></i>
+			    <input class="app-search" type="search" class="" placeholder="">
+			</div>
+		</div>
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell mui-media app-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-8 mui-col-xs-6 mui-ellipsis">
+	            			<span>【AH】201705458</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-6 mui-ellipsis">
+	            			<span class="mui-pull-right">责任单位：选矿厂</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-8 mui-col-xs-6 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-6 mui-ellipsis">
+	            			<span class="mui-pull-right">隐患来源：安全检查</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>1.厂区通行路段上限速标志损坏。2.厂区基建...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请
+	            				<span class="icon iconfont icon-jty" style="font-size: 12px;"></span>
+	            			</span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		    <li class="mui-table-view-cell mui-media app-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-8 mui-col-xs-6 mui-ellipsis">
+	            			<span>【AH】201705458</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-6 mui-ellipsis">
+	            			<span class="mui-pull-right">责任单位：选矿厂</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-8 mui-col-xs-6 mui-ellipsis app-list-date">
+	            			<span>整改期限：2017年6月30日</span>
+	            			<img class="icon-danger" src="../img/u1452.png" />
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-6 mui-ellipsis">
+	            			<span class="mui-pull-right">隐患来源：安全检查</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>1.厂区通行路段上限速标志损坏。2.厂区基建...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请
+	            				<span class="icon iconfont icon-jty" style="font-size: 12px;"></span>
+	            			</span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/zepto.js" ></script>
+	<script type="text/javascript" src="../js/appEve.js" ></script>
+	<script>
+		$(".danger-list-item").click(function(){
+			$(".app-js-list .danger-list-item").removeClass("select");
+			$(this).addClass("select");
+		});
+	</script>
+</body>
+</html>

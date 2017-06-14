@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>隐患整改验收</title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <style>
+		.mui-plus .plus{
+			display: inline;
+		}
+		.plus{
+			display: none;
+		}
+		.mui-popover {
+			height: 100px;
+		}
+		.mui-popover .mui-scroll-wrapper {
+		    padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="mui-content">
+		<div style="padding:5px 50px">
+			<div id="segmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#danger-msg">隐患信息</a>
+				<a class="mui-control-item" href="#danger-acc">填写验收情况</a>
+			</div>
+		</div>
+		<div id="danger-msg" class="mui-control-content mui-active">
+			<ul class="mui-table-view app-table-list">
+				<li class="table-view-item app-table ui-textellipsis">
+					<span>通知书号：</span>
+					<span>【AH】2017050214</span>
+				</li>
+				<li class="table-view-item table-view-right ui-textellipsis">
+					<span>隐患来源：</span>
+					<span>安全巡检[2017.05.06]</span>
+					<a href="#middlePopover" class="icon iconfont icon-gy view-right-search" style="color:#007aff;height: 25px;"></a>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>责任单位：</span>
+					<span>基建部</span>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>整改期限：</span>
+					<span>2015年6月30日</span>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">隐患内容：</span>
+					<div class="table-content-body">
+						<ul>
+							<li>1.选矿车间环保实验室乙炔临时安放点无安全标识牌。</li>
+							<li>2.选矿二车间台式钻床除总电闸外未安装电路开关，台钻闲置时无法断电，存在安全隐患</li>
+						</ul>
+					</div>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>责任人：</span>
+					<span>[基建部]卢飞</span>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>整改时间：</span>
+					<span>2015年5月10日</span>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">整改情况：</span>
+					<div class="table-content-body app-js-content">
+						
+					</div>
+				</li>
+				<li class="table-view-item app-table-img" style="height: 135px;">
+					<div>
+						<span class="table-img-label" style="line-height: 21px;">隐患图片：</span>
+					</div>
+					<div class="table-img-body" style="height: 100px;">
+						<ul id="">
+							<li class="table-img-item">
+								<img src="../img/danger1.png" />
+							</li>
+							<li class="table-img-item">
+								<img src="../img/danger2.png" />
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="table-view-item app-table-img" style="height: 155px;">
+					<div>
+						<span class="table-img-label" style="line-height: 21px;">整改图片：</span>
+					</div>
+					<div class="table-img-body" style="height: 110px;">
+						<ul id="showImg">
+							
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="danger-acc" class="mui-control-content">
+			<ul class="mui-table-view app-table-list">
+				<li class="table-view-item app-table ui-textellipsis">
+					<span>通知书号：</span>
+					<span>【AH】</span>
+					<span class="app-js-fnumber">2017050214</span>
+					<spna id="guid"></span>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">验收意见：</span>
+					<div class="table-content-body">
+						<textarea id="textarea" rows="5" placeholder="" style="height: 74px;margin: 0;"></textarea>
+					</div>
+				</li>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>是否合格:</span>
+						<div class="mui-switch mui-switch-blue mui-switch-mini">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</ul>
+			<div class="app-bottom-button clearfix" style="padding:0 10px;margin-top: 200px;">
+				<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left app-btn-return">
+					返回
+				</button>
+				<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right app-btn-submit" onclick="formSubmit();">
+					提交
+				</button>
+			</div>
+		</div>
+	</div>
+	<div id="middlePopover" class="mui-popover">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				安全巡检[2017.05.06]
+			</div>
+		</div>
+	</div>
+	<!-- 大图显示 -->
+	<div id="showBigImg" style="display: none;">
+		<div class="showPicture-backdrop"></div>
+		<div class="showPicture-content">
+			<span id="closeImg" class="mui-icon mui-icon-close"></span>
+			<img src="" />
+		</div>
+	</div>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/appEve.js" ></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		$(function(){
+			var Request=new UrlSearch();
+			var hrefGuid = Request.guid;
+			var returnUrl =  MesApp.param.httpUrl + "/mesInterface/TaskControl/getZgtx.json?guid=" + hrefGuid;
+			$.get(returnUrl, function(data){
+				if(data.succeed){
+					$(".app-js-content").text(data.data.modifyedContent);
+					var fileUrl = JSON.parse(data.data.modifyedPicture);
+					for(var key in fileUrl){
+						var htm = '<li class="table-img-item"><img src='+fileUrl[key]+' /></li>';
+						$("#showImg").append($(htm));
+					}
+				}
+			});
+		})
+		function formSubmit(){
+			if($(".app-btn-submit").hasClass("hasSumit")){
+				return false;
+			}
+			// 按钮有.mui-active为true
+			var newUrl = MesApp.param.httpUrl + "/app/interface/postSucced.json"
+			var Request=new UrlSearch();
+			var hrefGuid = Request.guid;
+			$.ajax({
+				type : 'POST',
+				url : newUrl,
+				data : {
+					fcontent:$("#textarea").val(),
+					cftzsNo:$(".app-js-fnumber").text()
+				},
+				success: function(data){
+					if(data.succeed){
+						$(".app-btn-submit").addClass("hasSumit");
+						var to = "13696@192.168.4.57";
+						var msgTime = getTime();
+						var messageType = "message";
+						var body = {
+							"content": $("#textarea").val(),
+							"name": "卢飞 ",
+							"fnumber": $(".app-js-fnumber").text(),
+							"fstate": "1",
+							"time": msgTime,
+							"title": "隐患整改验收单",
+							"units": "安环部",
+							//"url": MesApp.param.httpUrl+'/app/demo/task1.html?guid=' + hrefGuid,
+							"userid": "13696",
+							"id":$("#guid").text()
+						};
+						body = JSON.stringify(body);
+						/*var body = '{"content": "'+$("#textarea").val()+'","name": "卢飞 ","fnumber": "'+$(".app-js-fnumber").text()+'",'
+							 + '"fstate": "1","time": "'+msgTime+'","title": "隐患整改通知单",'
+							 + '"funits": "安环部","furl": "'+MesApp.param.httpUrl+'/app/demo/task1.html",'
+							 + '"userid": "13696","id":"'+$("#guid").text()+'"}';*/
+						pageSendMessage(to,messageType,body);
+						mui.alert('', '提交成功', function() {
+							closePage();
+						});
+					}else{
+						$(".app-btn-submit").removeClass("hasSumit");
+						mui.alert("",data.errmsg);
+					}
+				},
+				error: function(data){
+					$(".app-btn-submit").removeClass("hasSumit");
+					mui.alert("","提交失败");
+				}
+			});
+		}
+	</script> 
+</body>
+</html>
+
+	 
+          
+  
+   

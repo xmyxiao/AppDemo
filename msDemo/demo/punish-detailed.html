@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>处罚详情</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="icon iconfont icon-jtz app-title-icon mui-pull-left app-title-color">
+			<spna class="app-title app-nav-back">返回</span>
+		</a>
+		<h1 class="mui-title app-nav-title">违章处罚通知书确认</h1>
+	</header>
+	<div class="mui-content">
+		<h4 style="text-align: center;">违章处罚通知书</h4>
+		<ul class="punish-confirm-list">
+			<li class="punish-confirm-item clearfix">
+				<span class="mui-pull-right app-js-fnumber"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>被处罚人：</span>
+				<span id="userResult"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>主管单位：</span>
+				<span id="depResult"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>违章时间：</span>
+				<span class="app-date-text"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>违章地点：</span>
+				<span class="app-js-site"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>违章行为：</span>
+				<span class="app-js-content"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>处罚方式：</span>
+				<span class="app-punish-type"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<span>处罚金额：</span>
+				<span class="app-js-money"></span>
+			</li>
+			<li class="punish-confirm-item">
+				<div>
+					<span class="table-img-label" style="line-height: 21px;">现场取证情况：</span>
+				</div>
+				<div class="table-img-body">
+					<ul id="showImg">
+						
+					</ul>
+				</div>
+			</li>
+			<li class="punish-confirm-item clearfix">
+				<span class="mui-pull-right">紫金矿业黑龙江多宝山铜业有限公司</span>
+			</li>
+			<li class="punish-confirm-item clearfix">
+				<span class="mui-pull-right">安环处</span>
+			</li>
+			<li class="punish-confirm-item clearfix">
+				<span class="mui-pull-right">2017年05月20日</span>
+			</li>
+			<li class="punish-confirm-item clearfix">
+				<img class="punish-detailed-img" src="../img/u3057.png" />
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/zepto.js" ></script>
+	<script type="text/javascript" src="../js/appEve.js" ></script>
+	<script>
+		$(function(){
+			var Request=new UrlSearch();
+			var hrefGuid = Request.guid;
+			var returnUrl =  MesApp.param.httpUrl + "/mesInterface/TaskControl/getViolationInfo.json?guid=" + hrefGuid;	
+			$.get(returnUrl, function(data){
+				if(data.succeed){
+					var config = {
+						cftzsNo : data.data.cftzsNo || "",
+						fmoney : data.data.fmoney || "",
+						ftime : data.data.ftime || "",
+						ftype : data.data.ftype || "",
+						funits : data.data.funits || "",
+						fsite : data.data.fsite  || "",
+						bkhr : data.data.bkhr  || "",
+						fcontent : data.data.fcontent   || ""
+					}
+					$(".app-js-fnumber").text(config.cftzsNo);
+					$(".app-js-money").text(config.fmoney);
+					$(".app-date-text").text(config.ftime);
+					$(".app-punish-type").text(config.ftype);
+					$("#depResult").text(config.funits);
+					$(".app-js-content").text(config.fcontent);
+					$(".app-js-site").text(config.fsite);
+					$("#userResult").text(config.bkhr);
+					
+					if(data.data.fPicture){
+						var fileUrl = JSON.parse(data.data.fPicture);
+						for(var key in fileUrl){
+							var htm = '<li class="table-img-item"><img src='+fileUrl[key]+' /></li>';
+							$("#showImg").append($(htm));
+						}
+					}
+					
+				}
+			});
+		});
+	</script>
+</body>
+</html>

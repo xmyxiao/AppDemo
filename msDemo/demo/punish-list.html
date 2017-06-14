@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>违章处罚列表</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/mui.picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="icon iconfont icon-sh app-title-icon mui-pull-left app-title-color"></a>
+		<h1 class="mui-title app-nav-title">违章处罚列表</h1>
+		<a class="iconfont app-title-icon icon-sousuo mui-pull-right app-title-color"></a>
+	</header>
+	<div class="mui-content">
+		<div class="danger-list mui-row">
+			<div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item select">最新处罚</spna>
+	            </div>
+	        </div>
+	        <div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item ">未确认处罚</spna>
+	                <span class="red-circular"><span class="red-circular-num">6</span></span>
+	            </div>
+	        </div>
+	        <div class="mui-col-sm-4 mui-col-xs-4">
+	            <div class="mui-table-view-cell">
+	                <spna class="danger-list-item ">所有处罚信息</spna>
+	            </div>
+	        </div>
+		</div>
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell mui-media punish-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>张三</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span> 罚款:300元</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>扣分：3分</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>违章情况：</span>
+	            			<span>(1) 生产区不戴安全帽或安全帽不系带；(2)生...</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>地点：</span>
+	            			<span>选矿厂1#浮选机选矿厂1#浮选机选矿厂...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请<span class="mui-icon mui-icon-arrowright" style="font-size: 16px;"></span></span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		    <li class="mui-table-view-cell mui-media punish-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>张三</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span> 罚款:300元</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>扣分：3分</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>违章情况：</span>
+	            			<span>(1) 生产区不戴安全帽或安全帽不系带；(2)生...</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>地点：</span>
+	            			<span>选矿厂1#浮选机选矿厂1#浮选机选矿厂...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请<span class="mui-icon mui-icon-arrowright" style="font-size: 16px;"></span></span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		    <li class="mui-table-view-cell mui-media punish-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>张三</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span> 罚款:300元</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>扣分：3分</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>违章情况：</span>
+	            			<span>(1) 生产区不戴安全帽或安全帽不系带；(2)生...</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>地点：</span>
+	            			<span>选矿厂1#浮选机选矿厂1#浮选机选矿厂...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请<span class="mui-icon mui-icon-arrowright" style="font-size: 16px;"></span></span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		    <li class="mui-table-view-cell mui-media punish-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>张三</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span> 罚款:300元</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>扣分：3分</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>违章情况：</span>
+	            			<span>(1) 生产区不戴安全帽或安全帽不系带；(2)生...</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>地点：</span>
+	            			<span>选矿厂1#浮选机选矿厂1#浮选机选矿厂...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请<span class="mui-icon mui-icon-arrowright" style="font-size: 16px;"></span></span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		    <li class="mui-table-view-cell mui-media punish-list">
+	            <img class="mui-media-object mui-pull-left" src="../img/u42.png">
+	            <div class="mui-media-body">
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>张三</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span> 罚款:300元</span>
+	            		</div>
+	            		<div class="mui-col-sm-4 mui-col-xs-4 mui-ellipsis">
+	            			<span>扣分：3分</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>整改期限：2017年6月30日</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-12 mui-col-xs-12 mui-ellipsis">
+	            			<span>违章情况：</span>
+	            			<span>(1) 生产区不戴安全帽或安全帽不系带；(2)生...</span>
+	            		</div>
+	            	</div>
+	            	<div class="mui-row app-list-body">
+	            		<div class="mui-col-sm-10 mui-col-xs-9 mui-ellipsis">
+	            			<span>地点：</span>
+	            			<span>选矿厂1#浮选机选矿厂1#浮选机选矿厂...</span>
+	            		</div>
+	            		<div class="mui-col-sm-2 mui-col-xs-3 mui-ellipsis">
+	            			<span class="mui-pull-right">详请<span class="mui-icon mui-icon-arrowright" style="font-size: 16px;"></span></span>
+	            		</div>
+	            	</div>
+	            </div>
+		    </li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/zepto.js" ></script>
+	<script>
+		$(".danger-list-item").click(function(){
+			$(".danger-list .danger-list-item").removeClass("select");
+			$(this).addClass("select");
+		});
+	</script>
+</body>
+</html>

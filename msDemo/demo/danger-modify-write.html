@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>隐患整改填写</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+    <link href="../css/app.css" rel="stylesheet"/>
+    <style>
+		.mui-plus .plus{
+			display: inline;
+		}
+		.plus{
+			display: none;
+		}
+		.mui-popover {
+			height: 100px;
+		}
+		.mui-popover .mui-scroll-wrapper {
+		    padding: 0 10px;
+		}
+	</style>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<div class="mui-content">
+		<div style="padding:5px 50px">
+			<div id="segmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#danger-ori">隐患信息</a>
+				<a class="mui-control-item" href="#danger-mod">整改填写</a>
+			</div>
+		</div>
+		<div id="danger-ori" class="mui-control-content mui-active">
+			<ul class="mui-table-view app-table-list">
+				<li class="table-view-item mui-table-view-cell app-table ui-textellipsis">
+					<span>通知书号：</span>
+					<span>【AH】2017050214</span>
+				</li>
+				<li class="table-view-item table-view-right ui-textellipsis">
+					<span>隐患来源：</span>
+					<span>安全巡检[2017.05.06]</span>
+					<a href="#middlePopover" class="icon iconfont icon-gy view-right-search" style="color:#007aff;height: 25px;"></a>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>责任单位：</span>
+					<span>基建部</span>
+				</li>
+				<li class="table-view-item ui-textellipsis">
+					<span>整改期限：</span>
+					<span>2015年6月30日</span>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">隐患内容：</span>
+					<div class="table-content-body">
+						<ul>
+							<li>1.选矿车间环保实验室乙炔临时安放点无安全标识牌。</li>
+							<li>2.选矿二车间台式钻床除总电闸外未安装电路开关，台钻闲置时无法断电，存在安全隐患</li>
+						</ul>
+					</div>
+				</li>
+				<li class="table-view-item app-table-img" style="height: 175px;">
+					<div>
+						<span class="table-img-label" style="line-height: 21px;">隐患图片：</span>
+					</div>
+					<div class="table-img-body" style="height: 125px;">
+						<ul>
+							<li class="table-img-item">
+								<img src="../img/danger1.png" />
+							</li>
+							<li class="table-img-item">
+								<img src="../img/danger2.png" />
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="danger-mod" class="mui-control-content">
+			<ul class="mui-table-view app-table-list">
+				<li class="table-view-item app-table ui-textellipsis">
+					<span>通知书号：</span>
+					<span>【AH】</span>
+					<span class = "app-js-fnumber">2017050214</span>
+					<spna id="guid"></span>
+				</li>
+				<li class="table-view-item table-view-right ui-textellipsis">
+					<span>隐患来源：</span>
+					<span>安全巡检[2017.05.06]</span>
+					<a href="#middlePopover" class="icon iconfont icon-gy view-right-search" style="color:#007aff;height: 25px;"></a>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">隐患内容：</span>
+					<div class="table-content-body">
+						<ul>
+							<li>1.选矿车间环保实验室乙炔临时安放点无安全标识牌。</li>
+							<li>2.选矿二车间台式钻床除总电闸外未安装电路开关，台钻闲置时无法断电，存在安全隐患</li>
+						</ul>
+					</div>
+				</li>
+				<li class="table-view-item app-table-content">
+					<span class="table-content-label mui-pull-left">整改情况：</span>
+					<div class="table-content-body">
+						<textarea id="textarea" rows="5" placeholder="" style="height: 74px;margin: 0;"></textarea>
+					</div>
+				</li>
+				<li class="table-view-item app-table-img" style="height: 225px;position: relative;">
+					<div>
+						<span class="table-img-label" style="line-height: 21px;">整改图片：</span>
+						<span class="mui-icon mui-icon-camera upfile">
+							<iframe name="uploadfrm" id="uploadfrm" style="display: none;"></iframe>  
+						    <form name="formHead" method="post" action="" id="formHead" enctype="multipart/form-data" target="uploadfrm">  
+						        <div>  
+						            <div>  
+						                <input type="file" name="files" id="file_head" onchange="javascript:setImagePreview();" />  
+						            </div>  
+						            <div>  
+						                <div id="DivUp" style="display: none">  
+						                    <input type="submit" data-inline="true" id="BtnUp" value="确认上传" data-mini="true" />  
+						                </div>  
+						            </div>  
+						        </div>  
+						    </form>    
+						</span>
+						<div data-role="fieldcontain" style="position: absolute;top:10px;right:10px;">  
+					        <div id="localImag">  
+					            <img id="preview" width="-1" height="-1" style="display: none" />  
+					        </div>  
+					    </div>
+					</div>
+					<div class="table-img-body">
+						<ul id="tableImg">
+							
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="app-bottom-button clearfix" style="padding:0 10px;margin-bottom: 20px;">
+				<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-left app-btn-return">
+					返回
+				</button>
+				<button type="button" style="width:130px;" class="mui-btn mui-btn-primary mui-btn-outlined mui-pull-right app-btn-submit" onclick="formSubmit();">
+					提交
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- 简单提示 -->
+	<div id="middlePopover" class="mui-popover">
+		<div class="mui-popover-arrow"></div>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				安全巡检[2017.05.06]
+			</div>
+		</div>
+	</div>
+	<!-- 大图显示 -->
+	<div id="showBigImg" style="display: none;">
+		<div class="showPicture-backdrop"></div>
+		<div class="showPicture-content">
+			<span id="closeImg" class="mui-icon mui-icon-close"></span>
+			<img src="" />
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/zepto.js" ></script>
+	<script type="text/javascript" src="../js/appEve.js" ></script>
+	<script>
+		function formSubmit(){
+			if($(".app-btn-submit").hasClass("hasSumit")){
+				return false;
+			}
+			var newUrl = MesApp.param.httpUrl + "/mesInterface/TaskControl/zgtx.json"
+			var picUrl = {};
+			if($("#tableImg .table-img-item").length > 0){
+				for(var i =0; i<$("#tableImg .table-img-item").length; i++){
+					var imgUrl = $($("#tableImg .table-img-item")[i]).find("img").attr("src");
+					picUrl["file" + i] = imgUrl;
+				}
+			}
+			picUrl = JSON.stringify(picUrl);
+			$.ajax({
+				type : 'POST',
+				url : newUrl,
+				data : {
+					modifyedPicture:picUrl,
+					modifyedContent:$("#textarea").val(),
+					guid : $("#guid").text()
+				},
+				success: function(data){
+					if(data.succeed){
+						$(".app-btn-submit").addClass("hasSumit");
+						var to = "13696@192.168.4.57";
+						var msgTime = getTime();
+						var messageType = "task";
+						var body = {
+							"fcontent" : $("#textarea").val(),
+							"fname": "13696",
+							"fnumber": $(".app-js-fnumber").text(),
+							"fstate": "1",
+							"ftime": msgTime,
+							"ftitle": "隐患整改完成单",
+							"funits": "安环部",
+							"furl": MesApp.param.httpUrl + '/app/demo/danger-modify-acceptance.html?guid=' + $("#guid").text(),
+							"fuserid": "13696",
+							"id": "3",
+							"guid":$("#guid").text()
+						};
+						body = JSON.stringify(body);
+						/*var body = '{"fcontent": "'+$("#textarea").val()+'","fname": "13696","fnumber": "'+$(".app-js-fnumber").text()+'",'
+							 + '"fstate": "1","ftime": "1496572699000","ftitle": "隐患整改通知单",'
+							 + '"funits": "安环部","furl": "'+MesApp.param.httpUrl+'/app/demo/danger-modify-acceptance.html?guid='+$("#guid").text()+'",'
+							 + '"fuserid": "13696","id": "3","guid":"'+$("#guid").text()+'"}';*/
+						pageSendMessage(to,messageType,body);
+						mui.alert('', '提交成功', function() {
+							closePage();
+						});
+					}else{
+						$(".app-btn-submit").removeClass("hasSumit");
+						mui.alert("",data.errmsg);
+					}
+					
+				},
+				error: function(data){
+					$(".app-btn-submit").removeClass("hasSumit");
+					mui.alert("","提交失败");
+				}
+			});
+		}
+		
+	</script>
+	<script type="text/javascript" src="../js/jquery.min.js" ></script>
+  	<script type="text/javascript" src="../js/file.js" ></script>
+  	<script type="text/javascript" src="../js/jquery.form.min.js" ></script>
+</body>
+</html>
+
+	 
+          
+  
+   
